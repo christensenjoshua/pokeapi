@@ -5,7 +5,7 @@ function Service(){
             pokemon = res.results
             for(let i = 1; i < res.results.length; i++){
                 //get detail for each pokemon returned in original query
-                pokemon[i].detail = {}
+                pokemon[i].myDetail = {}
                 $.get(res.results[i].url).then(res =>{
                     pokemon[i].myDetail = res.results
                 }).catch(err =>{

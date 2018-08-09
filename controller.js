@@ -4,14 +4,13 @@ function Controller(){
     function drawPokemon(){
         let template = ``
         let pokemon = service.accessPokemon()
-        console.log(pokemon)
-        debugger
         for(let i = 0; i < pokemon.length; i++){
             const anPokemon = pokemon[i]
+            console.log(anPokemon)
             let stats = `
             <h4>Stats</h4>
             `
-            for(let ii = 0; ii < anPokemon.myDetail.stats.length; i++){
+            for(let ii = 0; ii < anPokemon.myDetail.stats.length; ii++){
                 stats +=`
                 <p>${anPokemon.myDetail.stats[ii].stat.name}: ${anPokemon.myDetail.stats[ii].base_stat}</p>
                 `
@@ -23,7 +22,6 @@ function Controller(){
             </div>
             `
         }
-        console.log(pokemon)
         document.getElementById('content').innerHTML = template
     }
 
